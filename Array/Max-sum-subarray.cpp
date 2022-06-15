@@ -12,9 +12,10 @@ using namespace std;
         }
     }
 
-void maxSubarray(int a[], int n) {  // for finding max sum of sub array
+void maxSubarray(int a[], int n) {  // for finding max sum of sub array and printing with the sum
     int max = INT_MIN;
     int sum =0;
+    int c,b;
     for(int i=0;i<n;i++) {
             for(int j=i;j<n;j++) {
                 sum=0;
@@ -23,8 +24,13 @@ void maxSubarray(int a[], int n) {  // for finding max sum of sub array
                 }
                 if(sum>max){
                     max=sum;
+                    c = i;
+                    b = j;
                 }
             }
+        }
+        for(int i=c;i<=b;i++){
+            cout<<a[i]<<" ";
         }
         cout<<max;
 }
