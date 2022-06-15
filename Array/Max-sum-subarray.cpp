@@ -34,6 +34,12 @@ void maxSubarray(int a[], int n) {  // for finding max sum of sub array and prin
         }
         cout<<max;
 }
+
+//can be optimized by using cummulative approach
+//make array of cummulated sum
+//sum = carray[j]+carray[i-1]
+//carray[0]=0 to account for segmentation fault
+
 int main() {
      int a[10] = {1,2,3,4,5,6,7,8,10};
      int n=9;
