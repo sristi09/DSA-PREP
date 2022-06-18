@@ -4,7 +4,7 @@ using namespace std;
  void generateSubarray(int a[],int n) {  //for generating sub arrays
         for(int i=0;i<n;i++) {
             for(int j=i;j<n;j++) {
-                for(int k=i;k<j;k++) {
+                for(int k=i;k<=j;k++) {
                     cout<<a[k]<<" ";
                 }
                 cout<<endl;
@@ -19,7 +19,7 @@ void maxSubarray(int a[], int n) {  // for finding max sum of sub array and prin
     for(int i=0;i<n;i++) {
             for(int j=i;j<n;j++) {
                 sum=0;
-                for(int k=i;k<j;k++) {
+                for(int k=i;k<=j;k++) {
                     sum = sum + a[k];
                 }
                 if(sum>max){
