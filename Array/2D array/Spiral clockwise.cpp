@@ -10,34 +10,37 @@ int main() {
 			cin >> a[i][j];
 		}
 	}
-	int sc=0;
-	int ec =n-1;
-	int sr =0;
+	int dir =0;
+	int sr=0;
 	int er=m-1;
-	while(sc<=ec && sr<=er) {
-		for(i=sc;i<=ec;i++){
+	int sc=0;
+	int ec=n-1;
+	while(sr<=er && sc<=ec) {
+		if(dir==0){
+			for(int i=sc;i<=ec;i++){
 			cout<<a[sr][i]<<", ";
 		}
-		sr++;
-		for(i=sr;i<=er;i++) {
-			cout<<a[i][ec]<<", ";
+			sr++;
 		}
-		ec--;
-		if(sr<er) {
-			for(i=ec;i>=sc;i--) {
-			cout<<a[er][i]<<", ";
-			
+		else if(dir==1){
+			for(int i=sr;i<=er;i++){
+				cout<<a[i][ec]<<", ";
+			}
+			ec--;
 		}
-		er--;
+		else if(dir==2){
+			for(int i=ec;i>=sc;i--){
+				cout<<a[er][i]<<", ";
+			}
+			er--;
 		}
-		if(sc<ec) {
-			for(i=er;i>=sr;i--) {
-			cout<<a[i][sc]<<", ";
-		
+		else if(dir==3){
+			for(int i=er;i>=sr;i--){
+				cout<<a[i][sc]<<", ";
+			}
+			sc++;
 		}
-		sc++;
-		}
-		
+		dir = (dir+1)%4;
 	}
 	cout<<"END";
 	return 0;
