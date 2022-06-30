@@ -4,7 +4,7 @@ bool findPair(int arr[], int size, int n){
      int i=0;
    int j=1;
    while(i<size&&j<size){
-       if(abs(arr[j]-arr[i])==n&&i<=j&&abs(arr[i]-arr[j])==n){
+       if(abs(arr[j]-arr[i])==n&&i<=j){
            return true;
        }
        else if(abs(arr[j]-arr[i]<n)){
