@@ -1,5 +1,5 @@
 int i, candidate = -1, votes = 0;
-    // Finding majority candidate
+    // Finding majority candidate which occurs > n/2 times
     for (i = 0; i < n; i++) {
         if (votes == 0) {
             candidate = arr[i];
